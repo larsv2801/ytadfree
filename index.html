@@ -46,9 +46,10 @@
             return null;
         }
 
-
-        var videoid = getVideoId(new URL(yturl));
-        console.log(videoid);
+        if(yturl != 'null'){
+            var videoid = getVideoId(new URL(yturl));
+            console.log(videoid);
+        }
 
         if(videoid){
             document.getElementById("videoiframe").src = `https://www.yout-ube.com/embed/${videoid}`;
@@ -60,6 +61,7 @@
             .then(() => console.log("Service worker geregistreerd"))
             .catch(err => console.error("Fout:", err));
         }
+
     </script>
 </body>
 </html>
