@@ -46,13 +46,17 @@
             return null;
         }
 
-        if(yturl != 'null'){
-            var videoid = getVideoId(new URL(yturl));
-            console.log(videoid);
-        }
+        if (yturl && yturl !== 'null' && yturl.trim() !== '') {
+        try {
+            const videoid = getVideoId(new URL(yturl));
+            console.log("Video ID gevonden:", videoid);
 
-        if(videoid){
-            document.getElementById("videoiframe").src = `https://www.yout-ube.com/embed/${videoid}`;
+            if (videoid) {
+                document.getElementById("videoiframe").src = `https://www.yout-ube.com/embed/${videoid}`;
+            }
+        } catch (e) {
+            console.error("Geen geldige URL om te parsen:", yturl);
+        }
         }
 
 
