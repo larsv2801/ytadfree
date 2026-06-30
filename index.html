@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="manifest" href="manifest.json?v=1.0.4">
-    <title>Youtube add free</title>
+    <title>Youtube ad free</title>
     <style>
         body{
             margin:0;
@@ -32,8 +32,20 @@
         const params = new URLSearchParams(window.location.search);
         const yturl = decodeURIComponent(params.get("url"));
 
-        const url = new URL(yturl);
-        var videoid = url.pathname.slice(1);
+        function getVideoId(url) {
+            if (url.hostname === "youtu.be") {
+                return url.pathname.slice(1);
+            }
+
+            if (url.searchParams && url.searchParams.has("v")) {
+                return url.searchParams.get("v");
+            }
+
+            return null;
+        }
+
+
+        var videoid = getVideoId(new URL(yturl));
         console.log(videoid);
 
         if(videoid){
