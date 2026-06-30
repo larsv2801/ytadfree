@@ -54,6 +54,13 @@
             document.getElementById("videoiframe").src = `https://www.yout-ube.com/embed/${videoid}`;
         }
 
+
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.register("/ytadfree/service-worker.js")
+            .then(() => console.log("Service worker geregistreerd"))
+            .catch(err => console.error("Fout:", err));
+        }
+
     </script>
 </body>
 </html>
