@@ -3,7 +3,9 @@
     "short_name": "Youtube ad free",
     "description": "Youtube ad free",
     "categories": ["entertainment"],
-    "start_url": "/ytadfree",
+    "id": "/ytadfree/",
+    "start_url": "/ytadfree/",
+    "scope": "/ytadfree/",
     "version": "1.0.3",
     "background_color": "#000000",
     "theme_color": "#000000",
@@ -28,7 +30,7 @@
         }
     ],
     "share_target": {
-    "action": "/ytadfree",
+    "action": "/ytadfree/",
     "method": "GET",
     "params": {
       "url": "url"
