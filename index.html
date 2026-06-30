@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="manifest" href="manifest.json?v=1.0.3">
+    <title>Youtube add free</title>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            overflow:hidden;
+        }
+        iframe{
+            width:100dvw;
+            height:100dvh;
+            padding:0;
+            margin:0;
+            border:none;
+            outline:none;
+        }
+    </style>
+</head>
+<body>
+    
+    <iframe id="videoiframe"
+    src="https://www.youtube.com/embed/8NfafU1BgaY"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen></iframe>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const yturl = decodeURIComponent(params.get("url"));
+
+        const url = new URL(yturl);
+        var videoid = url.pathname.slice(1);
+        console.log(videoid);
+
+        if(videoid){
+            document.getElementById("videoiframe").src = `https://www.youtube.com/embed/${videoid}`;
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+{
+    "name": "Youtube ad free",
+    "short_name": "Youtube ad free",
+    "description": "Youtube ad free",
+    "categories": ["entertainment"],
+    "start_url": "/ytadfree",
+    "version": "1.0.3",
+    "background_color": "#000000",
+    "theme_color": "#000000",
+    "display": "fullscreen",
+    "orientation": "landscape",
+    "icons": [
+        {
+            "src": "ytlogo192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "ytlogo512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+         {
+            "src": "ytlogo144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        }
+    ],
+    "share_target": {
+    "action": "/ytadfree",
+    "method": "GET",
+    "params": {
+      "url": "url"
+    }
+  }
+}
