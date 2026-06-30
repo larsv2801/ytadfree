@@ -6,7 +6,7 @@
     "id": "/ytadfree/",
     "start_url": "/ytadfree/",
     "scope": "/ytadfree/",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "background_color": "#000000",
     "theme_color": "#000000",
     "display": "fullscreen",
@@ -30,10 +30,12 @@
         }
     ],
     "share_target": {
-    "action": "/ytadfree/",
-    "method": "GET",
-    "params": {
-      "url": "url"
+        "action": "/ytadfree/",
+        "method": "GET",
+        "params": {
+          "title": "title",
+          "text": "url",
+          "url": "url"
+        }
     }
-  }
 }
